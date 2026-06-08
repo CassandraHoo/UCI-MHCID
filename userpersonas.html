@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///Users/uscaalho/Downloads/User_Personas.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Personas</title>
+<link rel="stylesheet" href="./User Personas_files/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F4F0; color: #1A1A18; padding: 2rem; }
+  .page { padding: 2rem 0 1rem; border-bottom: 1px solid #E0DED7; max-width: 900px; margin: 0 auto; }
+  .page:last-child { border-bottom: none; }
+  .page-title { font-size: 28px; font-weight: 600; color: #1A1A18; margin-bottom: 6px; }
+  .page-sub { font-size: 15px; color: #6B6A66; margin-bottom: 28px; line-height: 1.6; }
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .ov-card { border-radius: 12px; padding: 18px; border: 0.5px solid #E0DED7; background: #fff; }
+  .ov-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .ov-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .ov-name { font-size: 15px; font-weight: 600; color: #1A1A18; margin-bottom: 2px; }
+  .ov-meta { font-size: 12px; color: #9B9A96; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+  .tag { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+  .sec-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #9B9A96; margin: 10px 0 5px; }
+  .bullet-list { list-style: none; padding: 0; margin: 0; }
+  .bullet-list li { font-size: 12px; color: #6B6A66; padding: 2px 0 2px 14px; position: relative; line-height: 1.5; }
+  .bullet-list li::before { content: "·"; position: absolute; left: 3px; color: #9B9A96; }
+  .challenge-box { font-size: 12px; color: #6B6A66; background: #F5F4F0; border-radius: 8px; padding: 8px 10px; line-height: 1.5; margin-top: 4px; border: 0.5px solid #E0DED7; }
+  .persona-header { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-radius: 12px; margin-bottom: 16px; border: 0.5px solid #E0DED7; }
+  .ph-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+  .ph-name { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
+  .ph-sub { font-size: 12px; opacity: 0.75; }
+  .ph-count { font-size: 12px; margin-left: auto; opacity: 0.65; white-space: nowrap; }
+  .student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .s-card { background: #fff; border: 0.5px solid #E0DED7; border-radius: 12px; padding: 14px; }
+  .s-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .s-av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .s-name { font-size: 13px; font-weight: 600; color: #1A1A18; margin-bottom: 1px; }
+  .s-meta { font-size: 11px; color: #9B9A96; }
+  .s-row { margin-bottom: 6px; }
+  .s-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #9B9A96; margin-bottom: 2px; }
+  .s-body { font-size: 11px; color: #6B6A66; line-height: 1.5; }
+  .s-quote { font-size: 11px; color: #6B6A66; font-style: italic; border-left: 2px solid #E0DED7; padding-left: 8px; margin-top: 8px; line-height: 1.5; }
+  .theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .theme-card { background: #EEECEA; border-radius: 8px; padding: 14px; }
+  .theme-title { font-size: 13px; font-weight: 600; color: #1A1A18; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+  .theme-body { font-size: 12px; color: #6B6A66; line-height: 1.55; }
+  .divider { border: none; border-top: 0.5px solid #E0DED7; margin: 28px 0 0; }
+
+  .g1-bg { background: #E6F1FB; } .g1-text { color: #0C447C; } .g1-tag { background: #B5D4F4; color: #0C447C; }
+  .g2-bg { background: #E1F5EE; } .g2-text { color: #085041; } .g2-tag { background: #9FE1CB; color: #085041; }
+  .g3-bg { background: #FAEEDA; } .g3-text { color: #633806; } .g3-tag { background: #FAC775; color: #633806; }
+  .g4-bg { background: #FBEAF0; } .g4-text { color: #72243E; } .g4-tag { background: #F4C0D1; color: #72243E; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .overview-grid, .student-grid, .theme-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- OVERVIEW -->
+<div class="page">
+  <p class="page-title">User Personas</p>
+  <p class="page-sub">32 respondents (out of a cohort of 40) clustered into 4 distinct personas</p>
+  <div class="overview-grid">
+
+    <div class="ov-card">
+      <div class="ov-top">
+        <div class="ov-icon g1-bg"><i class="ti ti-search" style="font-size:18px;color:#0C447C;"></i></div>
+        <div><p class="ov-name">The Job-Seeker</p><p class="ov-meta">10 respondents · Ages 22–29</p></div>
+      </div>
+      <div class="tag-row"><span class="tag g1-tag">No Experience – Entry/Junior Level</span><span class="tag g1-tag">1 mid-level career gap</span></div>
+      <p class="sec-label">Career Goals</p>
+      <ul class="bullet-list"><li>Land their first job after school</li><li>Get a full-time role in HCI+D</li></ul>
+      <p class="sec-label">What They Want to Learn</p>
+      <ul class="bullet-list"><li>Portfolio review &amp; personal branding guidance</li><li>Interview prep and how to stand out as an applicant</li><li>Understand how to translate school work into industry value</li><li>Networking strategies for breaking in</li></ul>
+      <p class="sec-label">Challenges</p>
+      <div class="challenge-box">Little to no industry experience. Difficulty communicating their value. Many feel invisible to employers or lack confidence. Worried that junior roles are in jeopardy due to AI.</div>
+    </div>
+
+    <div class="ov-card">
+      <div class="ov-top">
+        <div class="ov-icon g2-bg"><i class="ti ti-arrows-exchange" style="font-size:18px;color:#085041;"></i></div>
+        <div><p class="ov-name">The Career Pivoter</p><p class="ov-meta">14 respondents · Ages 25–50</p></div>
+      </div>
+      <div class="tag-row"><span class="tag g2-tag">Mid-level in current field</span><span class="tag g2-tag">Entry-level in HCI+D</span></div>
+      <p class="sec-label">Career Goals</p>
+      <ul class="bullet-list"><li>Segue from their current industries into the HCI+D industry</li></ul>
+      <p class="sec-label">What They Want to Learn</p>
+      <ul class="bullet-list"><li>Translate existing skills into a design career narrative</li><li>Understand where they fit on a product team</li><li>Career pivot strategies and how to reframe résumés</li><li>Portfolio development starting from scratch</li><li>Clarity on what companies are actually hiring for</li></ul>
+      <p class="sec-label">Challenges</p>
+      <div class="challenge-box">Strong domain expertise (engineering, aviation, healthcare, data) but no design portfolio. Struggle to bridge the credibility gap and reframe their story.</div>
+    </div>
+
+    <div class="ov-card">
+      <div class="ov-top">
+        <div class="ov-icon g3-bg"><i class="ti ti-trending-up" style="font-size:18px;color:#633806;"></i></div>
+        <div><p class="ov-name">The Career Growth Seeker</p><p class="ov-meta">6 respondents · Ages 24–28</p></div>
+      </div>
+      <div class="tag-row"><span class="tag g3-tag">Junior to Senior</span><span class="tag g3-tag">Active HCI practitioners</span></div>
+      <p class="sec-label">Career Goals</p>
+      <ul class="bullet-list"><li>Level up in their current roles</li><li>Improve their skill set</li><li>Learn new competencies (i.e. Service Design and accessibility) within HCI+D</li><li>Seeking reinvention, not just a job</li></ul>
+      <p class="sec-label">What They Want to Learn</p>
+      <ul class="bullet-list"><li>Advocate for UX within their organization</li><li>Communicate design decisions to engineers and PMs</li><li>Facilitation and team-building techniques</li><li>Sharpen professional soft skills and influence</li><li>Discover niche design paths (agencies, brand activations, spatial design)</li><li>Accessibility and inclusive design practices</li></ul>
+      <p class="sec-label">Challenges</p>
+      <div class="challenge-box">Lack of visibility/respect from stakeholders. Feel professionally accomplished, but stuck. Burnt out on corporate culture. Want to understand where UX is heading in the AI era and stay relevant.</div>
+    </div>
+
+    <div class="ov-card">
+      <div class="ov-top">
+        <div class="ov-icon g4-bg"><i class="ti ti-briefcase" style="font-size:18px;color:#72243E;"></i></div>
+        <div><p class="ov-name">The Leader / Entrepreneur</p><p class="ov-meta">2 respondents · Ages 40–50</p></div>
+      </div>
+      <div class="tag-row"><span class="tag g4-tag">Director/Executive</span><span class="tag g4-tag">Fractional &amp; contract</span></div>
+      <p class="sec-label">Career Goals</p>
+      <ul class="bullet-list"><li>Grow or sustain their business / freelance practice</li><li>Redefine their identity</li></ul>
+      <p class="sec-label">What They Want to Learn</p>
+      <ul class="bullet-list"><li>Learn facilitation and team-building techniques</li><li>Understand how to improve a design's value beyond pixels/UI</li><li>Accessibility and inclusive design practices</li><li>Negotiate contracts and structure freelance engagements</li><li>Meet inspiring speakers and expand their network</li></ul>
+      <p class="sec-label">Challenges</p>
+      <div class="challenge-box">Already successful but navigating the AI disruption to design's identity. As an executive, one feels too far away from hands-on work. One consultant pivoted fields and is trying to figure out how to navigate a new industry.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMMON THEMES & TRENDS -->
+<div class="page">
+  <p class="page-title">Common Themes &amp; Trends</p>
+  <p class="page-sub">Patterns that cut across all four personas</p>
+  <div class="theme-grid">
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-robot" style="font-size:15px;color:#6B6A66;"></i>AI Anxiety is Universal</p><p class="theme-body">Nearly every respondent mentioned AI — fear of job displacement, tools changing workflows, losing creativity, and the bar rising for entry-level roles.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-mood-sad" style="font-size:15px;color:#6B6A66;"></i>Job Market Anxiety</p><p class="theme-body">The most common goal across all personas is "get a job." Most feel the market is oversaturated, ghosting is rampant, and the entry-level door is closing.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-messages" style="font-size:15px;color:#6B6A66;"></i>Storytelling &amp; Communication</p><p class="theme-body">Almost everyone wants help communicating their work — to interviewers, engineers, stakeholders, or senior leadership — not learning more design tools.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-flame" style="font-size:15px;color:#6B6A66;"></i>Toxic Work Experiences</p><p class="theme-body">A striking number shared stories of bad managers, being ignored, discriminated against, or having their work stolen. "How to deal with toxic people" was a top topic request. There is a desire to learn about psychological safety.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-mood-confused" style="font-size:15px;color:#6B6A66;"></i>Imposter Syndrome</p><p class="theme-body">Multiple respondents explicitly named it. Several more described it without the label — feeling unqualified, not believing they're a designer, or dreading being "found out."</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-accessible" style="font-size:15px;color:#6B6A66;"></i>Accessibility is a Priority</p><p class="theme-body">Accessibility ranked among the most-selected topic interests. Several respondents want to specialize in it.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-refresh" style="font-size:15px;color:#6B6A66;"></i>Career Pivots are the Norm</p><p class="theme-body">A majority are transitioning — from engineering, healthcare, hospitality, academia, aerospace, or graphic design. Very few arrived in UX through a linear path.</p></div>
+    <div class="theme-card"><p class="theme-title"><i class="ti ti-heart" style="font-size:15px;color:#6B6A66;"></i>Passion for Human Impact</p><p class="theme-body">Across experience levels, what excites people most is designing for real users — solving meaningful problems, building empathy into products, and seeing their work make a difference.</p></div>
+  </div>
+</div>
+
+<!-- THE JOB-SEEKER -->
+<div class="page">
+  <div class="persona-header g1-bg">
+    <div class="ph-icon g1-bg"><i class="ti ti-search" style="font-size:20px;color:#0C447C;"></i></div>
+    <div><p class="ph-name g1-text">The Job-Seeker</p><p class="ph-sub g1-text">No Experience – Entry/Junior Level (1 mid-level with a career gap)</p></div>
+    <span class="ph-count g1-text">10 students</span>
+  </div>
+  <div class="student-grid">
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R3</div><div><p class="s-name">Full-time student, 24</p><p class="s-meta">Entry-level · Education</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">UX Research</span><span class="tag g1-tag">Product Management</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Land a job in UX research or product management.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to stand out and get hired and team building.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">N/A</p></div>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R6</div><div><p class="s-name">Full-time student, 27</p><p class="s-meta">Mid-level · IT &amp; Media</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Career Gap</span><span class="tag g1-tag">Values Alignment</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Find a mid-level design role that suits their values and skillset.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to communicate work and case studies in a compelling way.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Personal life events created a career gap they're still recovering from.</p></div>
+      <p class="s-quote">"In such a difficult job market, will I be able to get a job that really suits me?"</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R9</div><div><p class="s-name">Full-time student, 23</p><p class="s-meta">Junior · IT, Retail, Media</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Imposter Syndrome</span><span class="tag g1-tag">Product Design</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Full-time product design role; clearly articulate value in applications.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Cross-functional communication (especially with engineers); how to advocate for their value within a team.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Senior designer at an internship abroad brutally dismissed her work and sidelined her for the rest of the term. The wound still feeds her imposter syndrome.</p></div>
+      <p class="s-quote">"When I have imposter syndrome in design environments."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R10</div><div><p class="s-name">Full-time student, 25</p><p class="s-meta">Junior · IT &amp; Hospitality</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Differentiation</span><span class="tag g1-tag">Job Market</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Secure a full-time design role; stand out in a saturated market.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to differentiate as an applicant and navigate today's job market.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Led a product build where scope was never properly aligned — project was shelved. Worries about keeping up with current trends and integrating AI into their workflow.</p></div>
+      <p class="s-quote">"What sets humans apart from AI is our ability to ask the right questions."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R16</div><div><p class="s-name">Full-time student, 26</p><p class="s-meta">Entry-level · No experience yet</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Total Beginner</span><span class="tag g1-tag">Open Learner</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Build research methods and design skills across the board.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Open to everything — completely entry level in UI/UX design.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">No workforce experience yet.</p></div>
+      <p class="s-quote">"I feel like AI tools are gradually replacing some of what UI/UX designers can do."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R17</div><div><p class="s-name">Full-time student, 24</p><p class="s-meta">Junior · Healthcare &amp; Education</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">HCI Research</span><span class="tag g1-tag">Advocacy</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Pursue a career in HCI research and advocacy.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to find a common thread across their interests to focus a career trajectory.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">No frustrating experiences yet — still early in their career.</p></div>
+      <p class="s-quote">"I love how I can be at the forefront of tech while grounding others in ethical and accessible standards."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R22</div><div><p class="s-name">Full-time student, 24</p><p class="s-meta">Entry-level · No experience</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Graphic → UX</span><span class="tag g1-tag">Research-Curious</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Find stable, meaningful work; gain real-world experience beyond academics.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to deal with toxic people; how to present work to non-designers; how to summarize and edit down.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Hearing about AI constantly is a buzzkill. Doesn't like the environmental implications and how AI doesn't always care about humans/users.</p></div>
+      <p class="s-quote">"I've always wanted to bridge the gap in understanding why we design the things that we do. I came from graphic design and we were always taught to do this and that because of these principles, but we never talked about who would be using the product. So learning about the user's needs and centering it around them rather than my own preferences helped change my perspective so much."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R27</div><div><p class="s-name">Full-time student, 24</p><p class="s-meta">Entry-level · Media &amp; Entertainment</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Imposter Syndrome</span><span class="tag g1-tag">Visibility</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Confidence to say "I am a designer" and mean it. How to leverage their master's degree.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Practical skills, industry insights, and how to succeed in a first design role.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Can't get noticed or land an interview. Feeling exhausted and embarrassed trying to break through.</p></div>
+      <p class="s-quote">"I want to be confident enough to say that I'm a designer and actually believe it myself."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R29</div><div><p class="s-name">Full-time student, 22</p><p class="s-meta">No work experience</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Self-Aware</span><span class="tag g1-tag">Communication Gap</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get their foot in the door — any real-world design experience to start.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to show up professionally, adapt to different environments, and understand where design fits in a product team.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Led a women's NCAA fencing team to speak out against misogynistic behavior — got iced out for it. Carries that experience into how she thinks about speaking up at work.</p></div>
+      <p class="s-quote">"I feel very confident in who I am... but struggling to find ways to express and communicate this."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g1-bg" style="color:#0C447C;">R30</div><div><p class="s-name">Product Design Intern, 23</p><p class="s-meta">Entry-level · Healthcare, IT, EdTech</p></div></div>
+      <div class="tag-row"><span class="tag g1-tag">Stakeholders</span><span class="tag g1-tag">Figma Skills</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get their foot in the door — any real-world design experience to start.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Learn how to communicate designs to different stakeholders and during interviews. Upskill in Figma and user testing.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Scared of getting laid off due to AI.</p></div>
+      <p class="s-quote">"I'm scared of getting laid off and all this AI talk as someone who doesn't want to use it as a replacement for thinking even for things I think are common sense... I do use AI but creatively."</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- THE CAREER PIVOTER -->
+<div class="page">
+  <div class="persona-header g2-bg">
+    <div class="ph-icon g2-bg"><i class="ti ti-arrows-exchange" style="font-size:20px;color:#085041;"></i></div>
+    <div><p class="ph-name g2-text">The Career Pivoter</p><p class="ph-sub g2-text">Mid-Level to experienced in their current professions, but entry level in HCI+D</p></div>
+    <span class="ph-count g2-text">14 students</span>
+  </div>
+  <div class="student-grid">
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R1</div><div><p class="s-name">Software Engineer, 50</p><p class="s-meta">Mid-level · Financial Services</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Designer Who Codes</span><span class="tag g2-tag">Age in Tech</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Find work in UI/UX; become a Product Designer; leave Montana.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Sharpen existing skills — nothing specific.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Was told his designs "couldn't be built" at a startup. Spent years becoming a software engineer to bridge the gap and prove them wrong.</p></div>
+      <p class="s-quote">"No real fears beyond being 50 and tech feels like a young person's game."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R4</div><div><p class="s-name">Graphic Designer, 25</p><p class="s-meta">Entry-level · Media &amp; Entertainment</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Graphic → Product</span><span class="tag g2-tag">No Direct Exp</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a job in product design despite no direct experience.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to position as a competitive applicant without a traditional background.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Ghosting and design challenges during the application process.</p></div>
+      <p class="s-quote">"I'm primarily worried about falling behind on all the different AI tools."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R5</div><div><p class="s-name">Automation Support Specialist, 29</p><p class="s-meta">Mid-level · Maritime Shipping</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">UX Research</span><span class="tag g2-tag">Resume Translation</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Become a UX Researcher; translate a non-traditional career into a design path.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to translate their current resume to a new career.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Entered a hard-headed industry as a sensitive person. Learned to push back to gain respect — a painful but transformative lesson.</p></div>
+      <p class="s-quote">"I eventually learned that if I wanted to gain respect, I'd have to learn to fight back."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R7</div><div><p class="s-name">Full-time student, 31</p><p class="s-meta">Junior · Finance/Healthcare/IT</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Accessibility</span><span class="tag g2-tag">Non-Corporate Path</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Find a job in accessibility design or a non-corporate product like toys or video games.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">New topics — previous classes have already covered communication and personal branding.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Freelance client's mother threatened legal action over a scope dispute; lost the friendship.</p></div>
+      <p class="s-quote">"I dread the rat race... the constant stress from the regularly scheduled layoffs."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R11</div><div><p class="s-name">Graphic Designer, 24</p><p class="s-meta">Entry-level · Education</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Mission-Driven</span><span class="tag g2-tag">Motion Design</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Work as a designer for a marine science or environmental organization. Loves motion and interaction design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to connect insights into solutions — the "so what" after research.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Feels they haven't grown as a designer; can't bridge theory to practice. Worried that the job market isn't hiring entry-level designers.</p></div>
+      <p class="s-quote">"I feel like I can't connect these into practice. I haven't found a way to overcome this yet."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R13</div><div><p class="s-name">Data Analyst, 25</p><p class="s-meta">Entry-level · Education</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Industry Knowledge</span><span class="tag g2-tag">UX / Content</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Land a job in UX — design, research, or content.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">More knowledge about the tech industry so they don't feel lost when they start working.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Experienced design as a power game, not a craft. Afraid of being replaceable.</p></div>
+      <p class="s-quote">Former manager cut "Half the design team like Thanos in Avengers: Endgame."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R14</div><div><p class="s-name">Restaurant Manager, 33</p><p class="s-meta">Junior · IT, Retail, Hospitality</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Quiet Introvert</span><span class="tag g2-tag">UX Research</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a full-time UX Research job.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to communicate research effectively so it leads to real action and impact.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">How to make an impact as a quiet introvert.</p></div>
+      <p class="s-quote">"I almost never use AI (intentionally) and I worry this makes me behind."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R18</div><div><p class="s-name">Sr. Graphic Designer, 35</p><p class="s-meta">Senior · Retail, Media, Hospitality</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Graphic → Product</span><span class="tag g2-tag">Work Suppressed</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Pivot from graphic design into product or UI/UX design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Feel comfortable finding where they fit on a product team after a career pivot.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Discovered 5-year-old concepts were suppressed by a VP without her knowledge — still deciding how to process and respond.</p></div>
+      <p class="s-quote">"With the process of problem solving being so compressed, I fear we lose the magic in the doing and all the tinkering we do along the way and we focus on getting to the solution to continue making profits."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R20</div><div><p class="s-name">Airplane Configuration Engineer, 30</p><p class="s-meta">Junior · Aerospace/Manufacturing</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Engineering → HCI</span><span class="tag g2-tag">Hardware + Software</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Apply engineering background to HCI and expand across hardware/software industries.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to communicate and showcase transferable skills in a new industry.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Quietly takes on too many work responsibilities without the visibility, which can lead to resentment and burnout.</p></div>
+      <p class="s-quote">"I've spent my career more focused on structural engineering and am excited to focus more on actual users."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R21</div><div><p class="s-name">Digital Media Specialist, 25</p><p class="s-meta">Entry-level · Media, Education, Hospitality</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Media → Design</span><span class="tag g2-tag">Exploring Direction</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Pivot into a design-facing role — still exploring what that looks like.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Help navigating this job market.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Funding cuts and political censorship in their science/academia workplace led to team layoffs and a suppressed voice.</p></div>
+      <p class="s-quote">"I feel like AI sucks all the creativity out of design and spits out the same results every time."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R25</div><div><p class="s-name">Medical Assistant, 25</p><p class="s-meta">Entry-level · Healthcare</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Healthcare → UX</span><span class="tag g2-tag">Portfolio Needed</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a full-time salary job in industry; build a design portfolio.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">HCI principles applied to real problems; how to present work and position as a competitive candidate.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Recently discovered the limitations of design without organizational buy-in. Understands that in order to use AI tools well, you need hands-on experience and mentorship — which is something that is no longer being focused on.</p></div>
+      <p class="s-quote">"I really enjoy understanding how people think, feel, and move through the world, and then building something that genuinely helps them. Coming from healthcare, I've seen firsthand how poor design can cause real frustration and even errors."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R26</div><div><p class="s-name">Project Manager, 26</p><p class="s-meta">Junior · Healthcare, IT, Retail, Media</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">PM → UX</span><span class="tag g2-tag">First Design Role</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Land a full-time UX/Product Designer role or internship.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Practical skills, industry insights, and how to succeed in a first design role.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Overwhelmed with how quickly technology and trends are constantly changing and how to remain current.</p></div>
+      <p class="s-quote">"I'm excited about finding the balance between using AI as a tool while still bringing meaningful human perspective."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R31</div><div><p class="s-name">Former Dental Hygienist, 38</p><p class="s-meta">Entry-level · Healthcare / Engineering</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">Career Change</span><span class="tag g2-tag">Portfolio Needed</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a job with meaningful impact that aligns with values; build a portfolio to get their foot in the door.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Portfolio development, entry-level strategies, and what AI tools the industry expects.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Has a deep empathy skill set built from years spent reading patients individually and adapting communication in real time as a dental hygienist. Needs to figure out how to translate that as a hireable skill for UX.</p></div>
+      <p class="s-quote">"A patient who feels informed is a patient who trusts you — and trust is what makes treatment actually work."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g2-bg" style="color:#085041;">R32</div><div><p class="s-name">Current UX Intern, Former SWE, 27</p><p class="s-meta">Junior · Finance, Supply Chain</p></div></div>
+      <div class="tag-row"><span class="tag g2-tag">SWE → UX Design</span><span class="tag g2-tag">Intern → FTE</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a full-time job in UX Design or Product Design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Practical skills for positioning effectively in this job market.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Pivoted from software engineering. Worries that people are losing their jobs over automation. Took UK contracts to build credibility before landing a UX internship.</p></div>
+      <p class="s-quote">"Pivoted from software engineering — took UK contracts to build credibility before landing a UX internship."</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- THE CAREER GROWTH SEEKER -->
+<div class="page">
+  <div class="persona-header g3-bg">
+    <div class="ph-icon g3-bg"><i class="ti ti-trending-up" style="font-size:20px;color:#633806;"></i></div>
+    <div><p class="ph-name g3-text">The Career Growth Seeker</p><p class="ph-sub g3-text">Junior to Senior level experience within the HCI industry</p></div>
+    <span class="ph-count g3-text">6 students</span>
+  </div>
+  <div class="student-grid">
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R8</div><div><p class="s-name">Product Designer, 28</p><p class="s-meta">Mid-level · Finance &amp; IT</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Solo Designer</span><span class="tag g3-tag">Advocacy</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Grow in career; keep learning; advocate for UX as a solo designer.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to better communicate their designs to different stakeholders.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Has a hard time communicating their designs and decisions. Keeping up with emerging technologies is a fear (but they like doing things that scare them).</p></div>
+      <p class="s-quote">"I like the move towards AI, I like vibe coding and also creating products that have AI backend to help users get to their solution quicker than before."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R15</div><div><p class="s-name">Full-time student / Non-profit, 29</p><p class="s-meta">Junior · Finance, IT, Education</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Leadership</span><span class="tag g3-tag">Discrimination Survivor</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a full-time job in product design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Learn how to become a leader and build confidence. Improve team building and collaboration skills. Tips &amp; tricks about the current industry.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Has imposter syndrome. Has been discriminated against in the workplace in the past. Worried about the environmental and social impacts of AI.</p></div>
+      <p class="s-quote">"I felt discriminated... I also did not speak to HR, which is what I would have done now."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R19</div><div><p class="s-name">UX Designer, 26</p><p class="s-meta">Senior · Aerospace, Logistics, Retail</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Enterprise → Niche</span><span class="tag g3-tag">Accessibility</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Improve skills in accessible and inclusive design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">What industries exist beyond big corporate; understand what they like and don't like about UX; meet inspiring people; explore AI's real impact.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Out-of-touch leaders, devs who shut down ideas, and exhausting stakeholder misalignment across a massive org.</p></div>
+      <p class="s-quote">"Developers stopping at 'that is not possible' and not understanding what is at risk for users."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R12</div><div><p class="s-name">Autonomous Vehicle Test Specialist, 26</p><p class="s-meta">Mid-level · IT &amp; Self-Driving Cars</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Re-Entering Design</span><span class="tag g3-tag">Defend Decisions</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Get a full-time product design or UX research job.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Improve communication skills and how to defend design decisions.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Wants to re-enter design, but worries that there is a scarcity of design jobs.</p></div>
+      <p class="s-quote">"Adding human touch to powerful technologies."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R23</div><div><p class="s-name">Founder + Lead Engineer / Tutor, 28</p><p class="s-meta">Mid-level · IT, Media, Education</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Entertainment</span><span class="tag g3-tag">CEO Ignored UX</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Full-time job in design, preferably in entertainment.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How interviews and testing actually work; how to keep a portfolio relevant; how to keep a job once you have it.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">In the past, they had buy-in from all stakeholders on their user research, except for the CEO… who killed the project. Wants to be taken seriously and not be taken advantage of.</p></div>
+      <p class="s-quote">"Essentially, none of us felt we were being listened to."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g3-bg" style="color:#633806;">R24</div><div><p class="s-name">Digital Designer, 24</p><p class="s-meta">Junior · Healthcare, Aerospace, Retail</p></div></div>
+      <div class="tag-row"><span class="tag g3-tag">Accessibility</span><span class="tag g3-tag">Anti-AI for Output</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Improve skills in accessible and inclusive design.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Advanced accessibility standards; solving for users with unique or edge-case situations.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Navigating an industry that's pushing AI for final prototypes. Resists using AI for design output while their field increasingly requires it.</p></div>
+      <p class="s-quote">"I am trying to find ways to navigate this field in a way that allows me to create my own designs."</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- THE LEADER / ENTREPRENEUR -->
+<div class="page">
+  <div class="persona-header g4-bg">
+    <div class="ph-icon g4-bg"><i class="ti ti-briefcase" style="font-size:20px;color:#72243E;"></i></div>
+    <div><p class="ph-name g4-text">The Leader / Entrepreneur</p><p class="ph-sub g4-text">Director/Executive level experience</p></div>
+    <span class="ph-count g4-text">2 students</span>
+  </div>
+  <div class="student-grid">
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g4-bg" style="color:#72243E;">R2</div><div><p class="s-name">Contract UX Researcher, 50+</p><p class="s-meta">Director/Executive · Healthcare, Retail, Education</p></div></div>
+      <div class="tag-row"><span class="tag g4-tag">Healthcare Tech</span><span class="tag g4-tag">IP Stolen</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Develop healthcare technologies — neonatal, maternal care, and public health products. Building products that help people's workflows is a passion.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">Practical designer skills; pay negotiation and contract structure. Improve research skills to round out strong design competency.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">A company acquired her invention, refused royalties, and she fought them in court for over a year before winning a settlement.</p></div>
+      <p class="s-quote">"Being 50 and tech feels like a young person's game. It's also strange that the younger generations seem to be getting to the point of being anti AI."</p>
+    </div>
+
+    <div class="s-card">
+      <div class="s-top"><div class="s-av g4-bg" style="color:#72243E;">R28</div><div><p class="s-name">Fractional Head of Design, 40</p><p class="s-meta">Director/Executive · Finance, Media, Professional Services</p></div></div>
+      <div class="tag-row"><span class="tag g4-tag">Fractional / Principal</span><span class="tag g4-tag">Identity Check</span></div>
+      <div class="s-row"><p class="s-label">Goals</p><p class="s-body">Grow their business; stay employed in a shifting landscape.</p></div>
+      <div class="s-row"><p class="s-label">What They Want to Learn from Class</p><p class="s-body">How to bring distributed teams together; how to make virtual spaces feel safe; how to inspire people to do their best work.</p></div>
+      <div class="s-row"><p class="s-label">Challenges</p><p class="s-body">Got too far from the actual work as a senior director. Experiencing an identity check: what does a "Head of Design" actually do, and is it what they want?</p></div>
+      <p class="s-quote">"For me, it's too far from the work. No tea to spill. Just an identity check."</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body></html>
