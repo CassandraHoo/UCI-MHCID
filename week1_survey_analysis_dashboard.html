@@ -1,0 +1,268 @@
+
+<h2 class="sr-only">Week 1 survey analysis dashboard: confidence levels, imposter syndrome rates, and AI sentiment across four student personas.</h2>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .section { margin-bottom: 2rem; }
+  .section-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-secondary); margin-bottom: 10px; }
+  .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+  .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .metric-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+  .metric-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .chart-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .chart-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 12px; }
+  .persona-bar-group { margin-bottom: 10px; }
+  .persona-bar-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .bar-track { height: 8px; background: var(--color-background-secondary); border-radius: 4px; overflow: hidden; }
+  .bar-segment { height: 100%; display: inline-block; }
+  .stacked-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; }
+  .legend-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--color-text-secondary); }
+  .legend-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  .conf-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 6px; }
+  .conf-cell { border-radius: var(--border-radius-md); padding: 8px 4px; text-align: center; }
+  .conf-num { font-size: 18px; font-weight: 500; }
+  .conf-lbl { font-size: 10px; margin-top: 2px; }
+  .quote-list { list-style: none; padding: 0; }
+  .quote-list li { font-size: 12px; color: var(--color-text-secondary); border-left: 2px solid var(--color-border-secondary); padding: 6px 10px; margin-bottom: 8px; line-height: 1.5; }
+  .tag { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; display: inline-block; margin-bottom: 4px; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .full-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .struggle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .struggle-item { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+  .struggle-pct { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .struggle-desc { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; line-height: 1.4; }
+</style>
+
+<div style="padding: 1rem 0;">
+
+  <div class="section">
+    <p class="section-label">Snapshot — 40 respondents</p>
+    <div class="metric-row">
+      <div class="metric">
+        <p class="metric-label">Avg. confidence</p>
+        <p class="metric-val">2.9 <span style="font-size:14px;font-weight:400;color:var(--color-text-secondary)">/ 5</span></p>
+        <p class="metric-sub">Across all personas</p>
+      </div>
+      <div class="metric">
+        <p class="metric-label">Imposter syndrome</p>
+        <p class="metric-val">95%</p>
+        <p class="metric-sub">Yes or sometimes</p>
+      </div>
+      <div class="metric">
+        <p class="metric-label">Hold back self-promotion</p>
+        <p class="metric-val">85%</p>
+        <p class="metric-sub">Often or sometimes</p>
+      </div>
+      <div class="metric">
+        <p class="metric-label">Portfolio anxiety</p>
+        <p class="metric-val">80%</p>
+        <p class="metric-sub">Anxious or uncertain</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-row section">
+
+    <div class="chart-card">
+      <p class="chart-title">Confidence by persona (avg. out of 5)</p>
+      <div class="persona-bar-group" style="margin-bottom:12px">
+        <div class="persona-bar-label"><span style="color:#72243E;font-weight:500;">Leader / Entrepreneur</span><span style="color:#72243E;font-weight:500;">5.0</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:100%;background:#D4537E;"></div></div>
+      </div>
+      <div class="persona-bar-group" style="margin-bottom:12px">
+        <div class="persona-bar-label"><span style="color:#633806;font-weight:500;">Career Growth Seeker</span><span style="color:#633806;font-weight:500;">3.1</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:62%;background:#EF9F27;"></div></div>
+      </div>
+      <div class="persona-bar-group" style="margin-bottom:12px">
+        <div class="persona-bar-label"><span style="color:#185FA5;font-weight:500;">Career Seeker</span><span style="color:#185FA5;font-weight:500;">2.9</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:58%;background:#378ADD;"></div></div>
+      </div>
+      <div class="persona-bar-group">
+        <div class="persona-bar-label"><span style="color:#085041;font-weight:500;">Career Pivoter</span><span style="color:#085041;font-weight:500;">2.8</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:56%;background:#1D9E75;"></div></div>
+      </div>
+      <p style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">Career Seekers and Pivoters cluster tightly at the low end. Only 1 person rated themselves a 5 (the sole Leader).</p>
+    </div>
+
+    <div class="chart-card">
+      <p class="chart-title">Confidence distribution (all respondents)</p>
+      <div class="conf-grid">
+        <div class="conf-cell" style="background:#FCEBEB;">
+          <p class="conf-num" style="color:#A32D2D;">3</p>
+          <p class="conf-lbl" style="color:#A32D2D;">Rating 1</p>
+        </div>
+        <div class="conf-cell" style="background:#FAEEDA;">
+          <p class="conf-num" style="color:#633806;">4</p>
+          <p class="conf-lbl" style="color:#633806;">Rating 2</p>
+        </div>
+        <div class="conf-cell" style="background:#E6F1FB;">
+          <p class="conf-num" style="color:#0C447C;">25</p>
+          <p class="conf-lbl" style="color:#0C447C;">Rating 3</p>
+        </div>
+        <div class="conf-cell" style="background:#E1F5EE;">
+          <p class="conf-num" style="color:#085041;">7</p>
+          <p class="conf-lbl" style="color:#085041;">Rating 4</p>
+        </div>
+        <div class="conf-cell" style="background:#FBEAF0;">
+          <p class="conf-num" style="color:#72243E;">1</p>
+          <p class="conf-lbl" style="color:#72243E;">Rating 5</p>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">63% of the class lands at exactly a 3 — capable but unconvinced. Nobody in the Career Seeker group rated themselves above a 4.</p>
+    </div>
+
+  </div>
+
+  <div class="chart-row section">
+
+    <div class="chart-card">
+      <p class="chart-title">Imposter syndrome by persona</p>
+      <div style="margin-bottom:10px;">
+        <div class="persona-bar-label" style="margin-bottom:5px;"><span style="font-size:12px;color:var(--color-text-secondary)">Career Seeker (n=19)</span></div>
+        <div class="stacked-bar">
+          <div style="width:68%;background:#E24B4A;" title="Yes: 13"></div>
+          <div style="width:32%;background:#FAC775;" title="Sometimes: 6"></div>
+        </div>
+        <p style="font-size:10px;color:var(--color-text-secondary);margin-top:3px;">68% Yes · 32% Sometimes · 0% No</p>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div class="persona-bar-label" style="margin-bottom:5px;"><span style="font-size:12px;color:var(--color-text-secondary)">Career Pivoter (n=10)</span></div>
+        <div class="stacked-bar">
+          <div style="width:90%;background:#E24B4A;" title="Yes: 9"></div>
+          <div style="width:10%;background:#1D9E75;" title="No: 1"></div>
+        </div>
+        <p style="font-size:10px;color:var(--color-text-secondary);margin-top:3px;">90% Yes · 0% Sometimes · 10% No</p>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div class="persona-bar-label" style="margin-bottom:5px;"><span style="font-size:12px;color:var(--color-text-secondary)">Career Growth Seeker (n=10)</span></div>
+        <div class="stacked-bar">
+          <div style="width:70%;background:#E24B4A;" title="Yes: 7"></div>
+          <div style="width:20%;background:#FAC775;" title="Sometimes: 2"></div>
+          <div style="width:10%;background:#1D9E75;" title="No: 1"></div>
+        </div>
+        <p style="font-size:10px;color:var(--color-text-secondary);margin-top:3px;">70% Yes · 20% Sometimes · 10% No</p>
+      </div>
+      <div class="legend-row">
+        <span class="legend-item"><span class="legend-dot" style="background:#E24B4A;"></span>Yes</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#FAC775;"></span>Sometimes</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>No</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <p class="chart-title">Self-promotion behavior</p>
+      <div style="margin-bottom:8px">
+        <div class="persona-bar-label"><span>Hold back — often</span><span style="font-weight:500;color:var(--color-text-primary);">12 (30%)</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:30%;background:#D85A30;"></div></div>
+      </div>
+      <div style="margin-bottom:8px">
+        <div class="persona-bar-label"><span>Hold back — sometimes</span><span style="font-weight:500;color:var(--color-text-primary);">22 (55%)</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:55%;background:#EF9F27;"></div></div>
+      </div>
+      <div style="margin-bottom:8px">
+        <div class="persona-bar-label"><span>Rarely hold back</span><span style="font-weight:500;color:var(--color-text-primary);">3 (8%)</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:8%;background:#9FE1CB;"></div></div>
+      </div>
+      <div style="margin-bottom:8px">
+        <div class="persona-bar-label"><span>Speak up freely</span><span style="font-weight:500;color:var(--color-text-primary);">3 (8%)</span></div>
+        <div class="bar-track"><div class="bar-segment" style="width:8%;background:#1D9E75;"></div></div>
+      </div>
+      <p style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">85% hold back in some capacity. The 3 who say they "speak up freely" include both Career Growth Seekers — suggesting experience builds voice.</p>
+    </div>
+
+  </div>
+
+  <div class="section full-card">
+    <p class="chart-title">Portfolio feelings</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:4px;">
+      <div style="text-align:center;padding:10px;background:#FCEBEB;border-radius:var(--border-radius-md);">
+        <p style="font-size:24px;font-weight:500;color:#A32D2D;">17</p>
+        <p style="font-size:11px;color:#791F1F;margin-top:2px;">Anxiety — too vulnerable to share</p>
+      </div>
+      <div style="text-align:center;padding:10px;background:#FAEEDA;border-radius:var(--border-radius-md);">
+        <p style="font-size:24px;font-weight:500;color:#633806;">15</p>
+        <p style="font-size:11px;color:#412402;margin-top:2px;">Uncertainty — haven't found their voice</p>
+      </div>
+      <div style="text-align:center;padding:10px;background:#E1F5EE;border-radius:var(--border-radius-md);">
+        <p style="font-size:24px;font-weight:500;color:#085041;">8</p>
+        <p style="font-size:11px;color:#04342C;margin-top:2px;">Pride — excited to share it</p>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">Career Seekers are the most anxious (10 of 17 anxiety responses). The 8 who feel pride skew toward Career Growth Seekers and Pivoters with prior experience.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <p class="section-label">AI sentiment — across 40 respondents</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="text-align:center;padding:12px;background:#E1F5EE;border-radius:var(--border-radius-lg);">
+        <p style="font-size:20px;font-weight:500;color:#085041;">17</p>
+        <p style="font-size:10px;color:#0F6E56;margin-top:3px;line-height:1.4;">Excited to master it</p>
+      </div>
+      <div style="text-align:center;padding:12px;background:#FAEEDA;border-radius:var(--border-radius-lg);">
+        <p style="font-size:20px;font-weight:500;color:#633806;">11</p>
+        <p style="font-size:10px;color:#412402;margin-top:3px;line-height:1.4;">Cautious about authenticity</p>
+      </div>
+      <div style="text-align:center;padding:12px;background:#FCEBEB;border-radius:var(--border-radius-lg);">
+        <p style="font-size:20px;font-weight:500;color:#A32D2D;">10</p>
+        <p style="font-size:10px;color:#791F1F;margin-top:3px;line-height:1.4;">Feel behind everyone else</p>
+      </div>
+      <div style="text-align:center;padding:12px;background:#F1EFE8;border-radius:var(--border-radius-lg);">
+        <p style="font-size:20px;font-weight:500;color:#5F5E5A;">2</p>
+        <p style="font-size:10px;color:#444441;margin-top:3px;line-height:1.4;">Doesn't apply (not job seeking)</p>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">Career Seekers are the most split: 7 feel behind, 7 feel excited, 5 are cautious. Career Pivoters lean enthusiastic (5 excited). Career Growth Seekers are most skeptical about authenticity (3 cautious).</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <p class="section-label">Where they're really struggling — selling themselves</p>
+    <div class="struggle-grid">
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#A32D2D;">Comparison trap</p>
+        <p class="struggle-desc">Comparing themselves to peers/senior designers is the #1 imposter syndrome trigger. Shows up across every persona.</p>
+      </div>
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#633806;">Fear of bragging</p>
+        <p class="struggle-desc">Multiple respondents explicitly name discomfort with self-promotion as "not genuine" or "arrogant." Especially common in introverts and Career Pivoters.</p>
+      </div>
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#185FA5;">Not knowing their unique value</p>
+        <p class="struggle-desc">"I don't know what makes me different" or "I don't know what to sell" — a direct identity gap, especially acute in Career Seekers.</p>
+      </div>
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#085041;">Translating experience</p>
+        <p class="struggle-desc">Pivoters struggle to connect past careers to design credibly. Several describe feeling like a "newbie in the room" despite deep domain expertise.</p>
+      </div>
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#72243E;">Speaking up as an introvert</p>
+        <p class="struggle-desc">Zero extroverts in this cohort. Every respondent is an introvert or ambivert — and many cite this as a structural barrier to visibility.</p>
+      </div>
+      <div class="struggle-item">
+        <p class="struggle-pct" style="color:#853F0B;">Portfolio gaps / polish anxiety</p>
+        <p class="struggle-desc">Several worried their work is "too academic" or "not polished enough" — even when they privately feel proud of it.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <p class="section-label">Voices from the room</p>
+    <ul class="quote-list">
+      <li><span class="tag" style="background:#E6F1FB;color:#0C447C;">Career Seeker</span><br>"I often feel like I have nothing to show, that the work I've done so far is subpar and isn't worth sharing."</li>
+      <li><span class="tag" style="background:#E1F5EE;color:#085041;">Career Pivoter</span><br>"Going from being an expert in a different field to a complete newbie in the room feels humbling. Even though I have done the work of a new degree I still don't feel fully confident."</li>
+      <li><span class="tag" style="background:#FAEEDA;color:#633806;">Career Growth Seeker</span><br>"Not knowing exactly what I'm doing wrong. I've been in last stage interviews for senior product designer positions wondering how did I get here."</li>
+      <li><span class="tag" style="background:#E6F1FB;color:#0C447C;">Career Seeker</span><br>"I want to be confident enough to say that I'm a designer and actually believe it myself."</li>
+      <li><span class="tag" style="background:#E1F5EE;color:#085041;">Career Pivoter</span><br>"I try to stay humble to not sound arrogant, but sometimes you need to brag about yourself a bit to have more visibility."</li>
+    </ul>
+  </div>
+
+</div>
